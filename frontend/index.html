@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Plan your next great adventure with Z9 Travel. Discover flights, stays, and journeys made for you."
+    />
+    <title>Z9 Travel — Find your somewhere</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#" aria-label="Z9 Travel home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M5 21.5 12.5 8l4 7 3-4L27 24H7.5A2.5 2.5 0 0 1 5 21.5Z" fill="currentColor" />
+              <path d="m11 24 5.5-9 3 4 2-2.5 4.5 7.5" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span>Z9 <span>Travel</span></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#booking">Flights</a>
+          <a href="#booking" data-open-tab="hotels">Hotels</a>
+          <a href="#booking" data-open-tab="buses">Buses</a>
+          <a href="#destinations">Tours</a>
+          <a href="#offers">Offers</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.6A8.5 8.5 0 0 1 8.4 3.8a8.6 8.6 0 1 0 11.8 11.8Z" /></svg>
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+          </button>
+          <a class="login-link" href="auth.html">Log in</a>
+          <a class="button button-small button-outline" href="auth.html#signup-view">Sign up</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow hero-eyebrow"><span></span> YOUR NEXT CHAPTER STARTS HERE</p>
+          <h1 id="hero-title">Discover your next<br />great adventure.</h1>
+          <p class="hero-copy">Big skies, new streets, unforgettable stories. Let’s find your somewhere.</p>
+          <a class="hero-link" href="#booking">Explore your options <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <div class="booking-wrap" id="booking">
+          <div class="booking-card">
+            <div class="booking-heading">
+              <div>
+                <p class="eyebrow">TRAVEL, YOUR WAY</p>
+                <h2>Where to next?</h2>
+              </div>
+              <span class="booking-sparkle" aria-hidden="true">✳</span>
+            </div>
+
+            <div class="booking-tabs" role="tablist" aria-label="Choose a travel type">
+              <button class="booking-tab is-active" id="tab-flights" type="button" role="tab" aria-selected="true" aria-controls="panel-flights" data-tab="flights">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 3-7.2 18-3.9-7.9L2 9.2 21 3Zm-11.1 10.1L21 3" /></svg>
+                Flights
+              </button>
+              <button class="booking-tab" id="tab-hotels" type="button" role="tab" aria-selected="false" aria-controls="panel-hotels" data-tab="hotels" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V8.5A1.5 1.5 0 0 1 4.5 7h5A1.5 1.5 0 0 1 11 8.5V12h8.5a1.5 1.5 0 0 1 1.5 1.5V20M3 16h18M6 10h2m-2 3h2m7-5h3a1 1 0 0 1 1 1v3h-5V9a1 1 0 0 1 1-1ZM5 20v-2m14 2v-2" /></svg>
+                Hotels
+              </button>
+              <button class="booking-tab" id="tab-buses" type="button" role="tab" aria-selected="false" aria-controls="panel-buses" data-tab="buses" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14l1-3V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7l1 3Zm0 0v2m14-2v2M4 10h16M7 14h.01M17 14h.01M7 5V3m10 2V3" /></svg>
+                Buses
+              </button>
+            </div>
+
+            <form class="search-form" id="search-form">
+              <div class="form-panel is-visible" id="panel-flights" role="tabpanel" aria-labelledby="tab-flights" data-panel="flights">
+                <div class="field-grid flight-grid">
+                  <label class="field">
+                    <span>From</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">⌖</span><input name="flight-from" placeholder="Departure city" autocomplete="off" required /></span>
+                  </label>
+                  <label class="field">
+                    <span>To</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">⌖</span><input name="flight-to" placeholder="Where to?" autocomplete="off" required /></span>
+                  </label>
+                  <label class="field">
+                    <span>Journey date</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">▦</span><input type="date" name="journey-date" required /></span>
+                  </label>
+                  <label class="field">
+                    <span>Return date</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">▦</span><input type="date" name="return-date" /></span>
+                  </label>
+                  <label class="field">
+                    <span>Travelers & class</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">♙</span><select name="flight-travelers"><option>1 traveler, Economy</option><option>2 travelers, Economy</option><option>1 traveler, Business</option><option>2 travelers, Business</option></select></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-panel" id="panel-hotels" role="tabpanel" aria-labelledby="tab-hotels" data-panel="hotels" hidden>
+                <div class="field-grid hotel-grid">
+                  <label class="field">
+                    <span>City or location</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">⌖</span><input name="hotel-location" placeholder="Where are you going?" autocomplete="off" required disabled /></span>
+                  </label>
+                  <label class="field">
+                    <span>Check-in</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">▦</span><input type="date" name="check-in" required disabled /></span>
+                  </label>
+                  <label class="field">
+                    <span>Check-out</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">▦</span><input type="date" name="check-out" required disabled /></span>
+                  </label>
+                  <label class="field">
+                    <span>Guests & rooms</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">♙</span><select name="hotel-guests" disabled><option>2 guests, 1 room</option><option>1 guest, 1 room</option><option>3 guests, 1 room</option><option>4 guests, 2 rooms</option></select></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-panel" id="panel-buses" role="tabpanel" aria-labelledby="tab-buses" data-panel="buses" hidden>
+                <div class="field-grid bus-grid">
+                  <label class="field">
+                    <span>From</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">⌖</span><input name="bus-from" placeholder="Departure city" autocomplete="off" required disabled /></span>
+                  </label>
+                  <label class="field">
+                    <span>To</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">⌖</span><input name="bus-to" placeholder="Where to?" autocomplete="off" required disabled /></span>
+                  </label>
+                  <label class="field">
+                    <span>Date of journey</span>
+                    <span class="input-wrap"><span class="field-icon" aria-hidden="true">▦</span><input type="date" name="bus-date" required disabled /></span>
+                  </label>
+                </div>
+              </div>
+
+              <button class="button search-button" type="submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 5 5" /></svg>
+                Search
+              </button>
+              <p class="form-message" id="form-message" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+        <div class="hero-note"><span>↗</span> Curated journeys. Zero guesswork.</div>
+      </section>
+
+      <section class="destinations section-shell" id="destinations" aria-labelledby="destinations-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A LITTLE INSPIRATION</p>
+            <h2 id="destinations-title">Trending destinations<span class="teal-dot">.</span></h2>
+            <p class="section-description">The places everyone’s dreaming about right now.</p>
+          </div>
+          <a class="text-link" href="#booking">See all destinations <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="destination-grid">
+          <article class="destination-card">
+            <a href="#booking" class="destination-image" aria-label="Explore Kyoto, Japan" data-destination="Kyoto">
+              <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=85" alt="Traditional street and pagoda in Kyoto, Japan" loading="lazy" />
+              <span class="image-label">CULTURE & CALM</span>
+              <span class="rating"><span aria-hidden="true">★</span> 4.9</span>
+            </a>
+            <div class="destination-info">
+              <div><h3>Kyoto</h3><p>Japan</p></div>
+              <p class="starting-price">from <strong>$640</strong></p>
+            </div>
+          </article>
+
+          <article class="destination-card">
+            <a href="#booking" class="destination-image" aria-label="Explore Amalfi Coast, Italy" data-destination="Amalfi Coast">
+              <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=900&q=85" alt="Colorful coastal villages along the Amalfi Coast" loading="lazy" />
+              <span class="image-label">COASTAL ESCAPE</span>
+              <span class="rating"><span aria-hidden="true">★</span> 4.8</span>
+            </a>
+            <div class="destination-info">
+              <div><h3>Amalfi Coast</h3><p>Italy</p></div>
+              <p class="starting-price">from <strong>$820</strong></p>
+            </div>
+          </article>
+
+          <article class="destination-card">
+            <a href="#booking" class="destination-image" aria-label="Explore Bali, Indonesia" data-destination="Bali">
+              <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85" alt="Tropical temple and lush greenery in Bali" loading="lazy" />
+              <span class="image-label">ISLAND TIME</span>
+              <span class="rating"><span aria-hidden="true">★</span> 4.9</span>
+            </a>
+            <div class="destination-info">
+              <div><h3>Bali</h3><p>Indonesia</p></div>
+              <p class="starting-price">from <strong>$510</strong></p>
+            </div>
+          </article>
+
+          <article class="destination-card">
+            <a href="#booking" class="destination-image" aria-label="Explore Marrakech, Morocco" data-destination="Marrakech">
+              <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=900&q=85" alt="Warm colors of a traditional building in Marrakech" loading="lazy" />
+              <span class="image-label">COLORFUL CITY</span>
+              <span class="rating"><span aria-hidden="true">★</span> 4.8</span>
+            </a>
+            <div class="destination-info">
+              <div><h3>Marrakech</h3><p>Morocco</p></div>
+              <p class="starting-price">from <strong>$395</strong></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="offers-section" id="offers" aria-labelledby="offers-title">
+        <div class="section-shell">
+          <div class="section-heading offers-heading">
+            <div>
+              <p class="eyebrow">A GOOD TRIP, EVEN BETTER VALUE</p>
+              <h2 id="offers-title">A little something extra<span class="coral-dot">.</span></h2>
+            </div>
+            <div class="scroll-hint">GOOD THINGS AHEAD <span aria-hidden="true">→</span></div>
+          </div>
+          <div class="offer-grid">
+            <article class="offer-card offer-flight">
+              <div class="offer-art" aria-hidden="true"><span class="offer-orbit"></span><span class="offer-plane">✈</span></div>
+              <p class="offer-kicker">YOUR NEXT TAKEOFF</p>
+              <h3>Take 15% off<br />domestic flights</h3>
+              <p class="offer-copy">More exploring, less spending. Your next trip is calling.</p>
+              <a href="#booking" class="offer-link">Find your flight <span aria-hidden="true">→</span></a>
+              <span class="offer-code">FLYMORE15</span>
+            </article>
+            <article class="offer-card offer-hotel">
+              <div class="offer-art" aria-hidden="true"><span class="offer-sun"></span><span class="offer-palm">✺</span></div>
+              <p class="offer-kicker">CHECK IN TO MORE</p>
+              <h3>Get 10% cashback<br />on your first stay</h3>
+              <p class="offer-copy">Find a stay worth dreaming about, then get a little back.</p>
+              <a href="#booking" class="offer-link" data-open-tab="hotels">Find your stay <span aria-hidden="true">→</span></a>
+              <span class="offer-code">FIRSTSTAY</span>
+            </article>
+            <article class="offer-card offer-weekend">
+              <div class="offer-art" aria-hidden="true"><span class="offer-mountain">◢</span><span class="offer-star">✳</span></div>
+              <p class="offer-kicker">WEEKEND, WELL SPENT</p>
+              <h3>Little escapes<br />from just $49</h3>
+              <p class="offer-copy">A change of scene is closer (and sweeter) than you think.</p>
+              <a href="#destinations" class="offer-link">Find a getaway <span aria-hidden="true">→</span></a>
+              <span class="offer-code">WEEKENDZ9</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-band" id="newsletter">
+        <div class="newsletter-inner">
+          <div>
+            <p class="eyebrow">A NOTE FROM SOMEWHERE</p>
+            <h2>Good trips start in your inbox.</h2>
+            <p>Get thoughtful travel ideas and members-only offers. No spam, ever.</p>
+          </div>
+          <form class="newsletter-form" id="newsletter-form">
+            <label class="visually-hidden" for="newsletter-email">Your email address</label>
+            <input id="newsletter-email" type="email" placeholder="Your email address" required />
+            <button class="button" type="submit">Count me in <span aria-hidden="true">→</span></button>
+            <p class="newsletter-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main section-shell">
+        <div class="footer-brand-column">
+          <a class="brand footer-brand" href="#" aria-label="Z9 Travel home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M5 21.5 12.5 8l4 7 3-4L27 24H7.5A2.5 2.5 0 0 1 5 21.5Z" fill="currentColor" /><path d="m11 24 5.5-9 3 4 2-2.5 4.5 7.5" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <span>Z9 <span>Travel</span></span>
+          </a>
+          <p>Find your somewhere.<br />We’ll help you get there.</p>
+          <div class="social-links" aria-label="Follow us">
+            <a href="#newsletter" aria-label="Instagram">ig</a>
+            <a href="#newsletter" aria-label="Facebook">f</a>
+            <a href="#newsletter" aria-label="Pinterest">p</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="#booking">Flights</a><a href="#booking" data-open-tab="hotels">Hotels</a><a href="#booking" data-open-tab="buses">Buses</a><a href="#destinations">Destinations</a>
+        </div>
+        <div class="footer-column">
+          <h2>We’re here</h2>
+          <a href="#newsletter">About us</a><a href="#newsletter">Help & support</a><a href="#newsletter">FAQs</a><a href="#newsletter">Contact</a>
+        </div>
+        <div class="footer-column payment-column">
+          <h2>Easy, secure payments</h2>
+          <p>Pay your way, wherever you’re headed.</p>
+          <div class="payment-methods" aria-label="Accepted payment methods">
+            <span aria-label="Visa">VISA</span><span aria-label="Mastercard">●●</span><span aria-label="American Express">AMEX</span><span aria-label="PayPal">P</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom section-shell">
+        <p>© <span id="copyright-year">2026</span> Z9 Travel. Made for the way out there.</p>
+        <div><a href="#newsletter">Privacy</a><a href="#newsletter">Terms</a><span>Made for the curious <span aria-hidden="true">✳</span></span></div>
+      </div>
+    </footer>
+
+    <dialog class="destination-dialog" id="destination-dialog" aria-labelledby="destination-dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close destination prompt">×</button>
+      <p class="eyebrow">A NEW ADVENTURE?</p>
+      <h2 id="destination-dialog-title">Ready to explore?</h2>
+      <p class="dialog-copy">Would you like to book a trip to <strong id="dialog-destination-name"></strong>?</p>
+      <div class="dialog-actions">
+        <button class="button button-outline dialog-later" type="button">Maybe later</button>
+        <button class="button" id="continue-to-booking" type="button">Continue to booking <span aria-hidden="true">→</span></button>
+      </div>
+    </dialog>
+  </body>
+</html>
